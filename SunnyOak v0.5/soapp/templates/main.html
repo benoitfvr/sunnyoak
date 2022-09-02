@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SunnyOak</title>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="Content-Language" content="fr">
+		<meta name="author" content="Benoît">
+		<!-- CSS -->
+		<link rel="stylesheet" href="static/css/bulma.min.css">
+		<link rel="stylesheet" href="static/css/styles.css">
+		<!-- Font -->
+		<link href="static/css/fonts.css" rel="stylesheet">
+		<script src="static/js/c6017f4b57.js"></script>
+		<!-- Jquery pour envoi donnée en AJAX -->
+		<script src="static/js/jquery-3.5.0.min.js"></script>
+	</head>
+	<body bgcolor="#303030">
+		<div class="menu">
+			<header class="header">
+				<img class="imglogo" src="static/img/logo.png">
+				<a id="header-logo" onclick="openNav()">SunnyOak</a>
+			</header>
+		</div>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#" onclick="closeNav()">Couleur</a>
+			<a href="#sequences" onclick="closeNav()">Séquences</a>
+			<a href="#" onclick="closeNav()">Ton&nbsp;Réveil&nbsp;</a>
+			<a href="#" onclick="closeNav()">Joue&nbsp;ta&nbsp;Musique</a>
+		</div>
+		<!-- COULEUR PRINCIPALE -->
+		<div class="boxcolor">
+			<div class="colorbase">
+				<div class="valider">
+					<div>
+						<h1 class="principale">CHOISISSEZ VOTRE COULEUR</h1>
+					</div>
+					<div class="mt-color">
+						<input class="colorpicker" type="range" step="1" min="0" max="360" value="{{hue}}"oninput="setColor()" autocomplete="off">
+					</div>
+					<div class="mt-color">
+						<button class="input submit" onClick="sendColor()">Changer la couleur</button>
+						<div id="tmpcolor"></div>
+					</div>
+					<div class="mt-color">
+						<div class="switch-on-off">
+							<div>OFF</div>
+							<label class="switch">
+								<input type="checkbox" class="on_off" onClick="onOff(this)" {{switchetat}}>
+								<span class="slider round"></span>
+							</label>
+							<div>ON</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="colorbase1">
+			<div id="valuecolor">
+				<img class="imglamp" src="static/img/lamp.png">
+			</div>
+		</div>
+		<!-- SEQUENCES -->
+		<div class="boxcolor1" id="sequences">
+			<div class="valider1">
+				<div class="allumer">
+					<h1 class="descseq"><span class="compé">&diams;</span> Allumer la lampe :</h1>
+					<label class="switch-sequence">
+						<input type="checkbox" class="on_off" onClick="onOff(this)" {{switchetat}}>
+						<span class="slider round"></span>
+					</label>
+				</div>
+				<div class="seqrr">
+					<h1 class="descseq"><span class="compé">&diams;</span> Séquence Arc-en-ciel aléatoire :</h1>
+					<label class="switch-sequence rainbow">
+						<input type="checkbox" id="rr_off" onClick="rrOff()">
+						<span class="slider round"></span>
+					</label>
+				</div>
+				<div class="seqtr">
+					<h1 class="descseq"><span class="compé">&diams;</span> Séquence Arc-en-ciel tournant :</h1>
+					<label class="switch-sequence rainbow">
+						<input type="checkbox" id="tr_off" onClick="trOff()">
+						<span class="slider round"></span>
+					</label>
+				</div>
+			</div>
+
+				<img class="imageoff" src="static/img/off.jpg">
+
+		</div>
+
+		<!-- JS -->
+		<script src="static/js/js.js" async></script>
+	</body>
+</html>
